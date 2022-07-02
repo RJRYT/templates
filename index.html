@@ -1,1 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript | RJRYT OFFICIAL</title>
+<meta name="description" content="This is a sample website for test javascript functions ">
+<meta name="author" content="New City Roleplay">
+<meta property="og:title" content="Javascript | RJRYT OFFICIAL " />
+        <meta property="og:description" content="This is a sample website for test javascript functions" />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content="https://rjryt.tech/docs/assets/images/logo/apple-touch-icon.png" />
+        <meta property="og:site_name" content="rjryt | javascript functions " />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <!-- Site Metas -->
+    <style>
+nav{
+  background: #ff0451;
+  padding: 10px 90px 10px 40px;
+  border: 1px solid #00f;
+  border-left: none;
+  border-right: none;
+  animation: colorchange 50s infinite;
+  box-shadow: 0 4px 8px 0 #000, 0 6px 20px 0 #000;
+}
+nav ul{
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+nav ul li.logo{
+  flex: 1;
+  font-size: 30px;
+  font-weight: 700;
+  color: #599;
+  text-align: center;
+  animation: colorchange 50s infinite;
+}
+h4{
+  background: #aaff00;
+  padding: 10px 90px 10px 40px;
+  border: 2px solid #75f;
+  border-left: none;
+  border-bottom: none;
+  text-align: center;
+  color: #722f37;
+  animation: colorchange 80s infinite;
+  box-shadow: 0 4px 9px 0 #000;
+}
 
+h5{
+  background: #aaff00;
+  padding: 10px 90px 10px 40px;
+  border: 6px solid #75f;
+  border-radius: 6px;
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+  text-align: left;
+  color: #722f37;
+  box-shadow: 0 4px 9px 0 #000;
+  animation: colorchange 150s infinite;
+}
+
+button{
+  color: cyan;
+  background-color: black;
+  animation: colorchange 35s infinite;
+  border-radius: 8px;
+  box-shadow: 0 4px 9px 0 #000;
+}
+
+.p1{
+ color: blue;
+ text-shadow: 0 4px 9px 0 #000;
+}
+
+.progress{
+ width: 450px;
+ height: 20px;
+ position: relative;
+ background-color: #ddd;
+ border: 2px solid #0f5;
+ border-radius: 8px;
+ box-shadow: 0 4px 9px 0 #000;
+}
+
+.bar{
+ background-color: #4caf50;
+ width: 0px;
+ height: 20px;
+ position: relative;
+ border-radius: 8px;
+}
+body {
+  background-color: grey;
+  animation: colorchange 350s infinite;
+}
+
+@keyframes colorchange {
+  0% {background-color: red; color: yellow;}
+  25% {background-color: yellow; color: blue;}
+  50% {background-color: blue; color: green;}
+  80% {background-color: green; color: red;}
+  100% {background-color: red; color: cyan;}
+}
+    </style>
+    <script>
+function enjoy() {
+document.getElementById("text").innerHTML = "This is a test message to test this javascript button.";
+}
+function time() {
+document.getElementById("text").innerHTML = Date();
+}
+function alert1() {
+document.getElementById("text").innerHTML = "This is a alert message.";
+alert("Hello bro are you ok now!");
+}
+function reset() {
+document.getElementById("text").innerHTML = "(-_-)";
+}
+function cmd() {
+let txt = "Are you sure to use this command.";
+if(confirm(txt) == 1) txt = "OK We will proceed it. <br>Thanks";
+else txt = "OK We canclled it. <br>Thanks";
+document.getElementById("text").innerHTML = txt;
+}
+function cmd3() {
+ let txt = "Please enter your name here.";
+ let name = prompt(txt, "rjryt");
+ if(name == null) {
+    txt = "OK<br> You cancelled the process";
+    document.getElementById("text").innerHTML = txt;
+  }
+  else {
+    if(name == null || name == 0) name = "Dude";
+    txt = "Hello " + name + "<br>Welcome to the javascript test.<br>Thanks for your time.";
+    document.getElementById("text").innerHTML = txt;
+  }
+}
+function progress() {
+ const bar = document.getElementById("pro");
+ let width = 0;
+ document.getElementById("text").innerHTML = "Loading progress bar...";
+ const id = setInterval(frame, 80);
+ function frame() {
+  if(width == 100) {
+    clearInterval(id);
+    document.getElementById("text").innerHTML = "Success  (-_-)<br>The progress bar is loaded.";
+  } 
+  else {
+     width ++;
+     bar.style.width = width + '%';
+   }
+ }
+}
+    </script>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li class="logo">RJRYT OFFICIAL</li>
+      </ul>
+    </nav>
+
+<h4>Welcome to RJRYT OFFICIAL website</h4>
+<p class="p1">Here is my some test javascript function calls</p>
+<div class="button">
+
+  <button type="button" onclick="enjoy()">test</button>
+<button type="button" onclick="time()">time</button>
+<button type="button" onclick="alert1()">alert</button>
+<button type="button" onclick="reset()">reset</button>
+<button type="button" onclick="cmd()">cmd</button>
+<button type="button" onclick="cmd3()">name</button>
+<button type="button" onclick="progress()">progress bar</button>
+<br><br>
+<div class="progress">
+ <div class="bar" id="pro"></div>
+</div>
+<h5 id="text">(-_-)</h5>
+</div>
+
+  </body>
+</html>
